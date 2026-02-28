@@ -39,7 +39,7 @@ def create_pdf_report(results, base_url):
         pdf.ln(5)
         
     # Return as bytes for Streamlit download
-    return bytes(pdf.output(dest='S'))
+    return pdf.output(dest='S').encode('latin-1')
 
 # --- 3. CORE AUDITOR LOGIC ---
 def run_full_audit(base_url):
